@@ -1,0 +1,65 @@
+# Ldr value detector
+
+
+
+
+
+
+> Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1 hours of work.
+
+
+
+## What It Does
+
+a device by which we could measure the intensity of light in analog from 0 to 1023
+
+
+## How It Works
+
+The circuit is captured in `breadboard-project.json`, and the firmware that runs it is in the `firmware/` folder.
+
+
+## How To Use It
+
+Power the esp32 devkit. You'll see the initializing message for first 2 seconds. After that, You could use it to measure light intensity from 0 to 1023 in analog value.
+
+
+## Demo
+
+- **Try it:** [https://taniwankenobi.github.io/breadboard-plays/p/127/](https://taniwankenobi.github.io/breadboard-plays/p/127/)
+
+
+## Schematic
+
+The editor snapshot is in `breadboard-project.json`.
+
+
+## Bill of Materials
+
+| Part | Quantity |
+| --- | --- |
+| esp32 devkit | 1 |
+| oled display 128*64 | 1 |
+| jumper wires | 7 |
+| ldr sensor | 1 |
+
+
+## Firmware
+
+Firmware files are in the `firmware/` folder.
+
+
+## Build Journal
+
+Build journal entries are kept in [`journals.md`](journals.md).
+
+
+---
+
+
+
+*Made in [Breadboard](https://breadboard.hackclub.com) — 1h of work*
+
+
+
+<p align="center"><img src="https://cdn.hackclub.com/019efae7-6857-75a2-8bc1-2618087b4eae/a%20bred%20tanuki%20(3).png" width="64" alt="Breadboard mascot" /></p>
