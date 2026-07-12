@@ -1,0 +1,237 @@
+{
+  "format": "velxio-project",
+  "version": 1,
+  "boards": [
+    {
+      "id": "esp32",
+      "boardKind": "esp32",
+      "x": 154.02787955644075,
+      "y": 115.64037194838477,
+      "activeFileGroupId": "group-esp32",
+      "languageMode": "arduino",
+      "serialBaudRate": 0
+    }
+  ],
+  "fileGroups": {
+    "group-esp32": [
+      {
+        "name": "sketch.ino",
+        "content": "#include <Adafruit_SSD1306.h>\n#include <Wire.h>\n#define SCREEN_WIDTH 128\n#define SCREEN_HEIGHT 64 \n#define SCREEN_ADDRESS 0x3C\nAdafruit_SSD1306 display(SCREEN_WIDTH,SCREEN_HEIGHT, &Wire, -1);\n#define ldr_pin 34\n\nvoid setup() {\n  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);\ndisplay.setCursor(0,0);\ndisplay.clearDisplay();\ndisplay.setTextColor(SSD1306_WHITE);\ndisplay.setTextSize(1);\ndisplay.print(\"System initializing\");\ndisplay.display();\ndelay(2000);\n}\n\nvoid loop() {\n  display.clearDisplay();\n  display.setTextSize(2);\n  display.setTextColor(SSD1306_WHITE);\n  display.setCursor(0,0);\n  int ldrvalue = analogRead(ldr_pin);\n  display.print(\"value:\");\n  display.print(ldrvalue);\n display.display();\n}"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "ssd1306_i2c_1783864743241_jgvrtlcy1",
+      "metadataId": "ssd1306-i2c",
+      "x": -100.03186274321587,
+      "y": 267.1846086306241,
+      "properties": {
+        "protocol": "i2c"
+      }
+    },
+    {
+      "id": "photoresistor_sensor_1783864780729_2mdy6yone",
+      "metadataId": "photoresistor-sensor",
+      "x": -180.19703140232812,
+      "y": 98.21116906248322,
+      "properties": {
+        "ledDO": false,
+        "ledPower": false
+      }
+    }
+  ],
+  "wires": [
+    {
+      "waypoints": [
+        {
+          "x": -154.15282299579803,
+          "y": -141.04659411223835
+        },
+        {
+          "x": 328.3178551403243,
+          "y": -141.04659411223835
+        },
+        {
+          "x": 328.3178551403243,
+          "y": 320.7416210717973
+        },
+        {
+          "x": 290,
+          "y": 320.7416210717973
+        }
+      ],
+      "id": "wire-1783864802410",
+      "start": {
+        "componentId": "photoresistor_sensor_1783864780729_2mdy6yone",
+        "pinName": "VCC",
+        "x": -2.197031402328122,
+        "y": 120.21116906248322
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "3V3",
+        "x": 288.0278795564408,
+        "y": 322.64037194838477
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783865450772",
+      "start": {
+        "componentId": "photoresistor_sensor_1783864780729_2mdy6yone",
+        "pinName": "GND",
+        "x": -2.197031402328122,
+        "y": 130.21116906248324
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "GND",
+        "x": 160.02787955644075,
+        "y": 309.64037194838477
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [
+        {
+          "x": -34.47675098088325,
+          "y": 242.8414876113897
+        },
+        {
+          "x": 160.02787955644075,
+          "y": 242.8414876113897
+        }
+      ],
+      "id": "wire-1783865456930",
+      "start": {
+        "componentId": "ssd1306_i2c_1783864743241_jgvrtlcy1",
+        "pinName": "GND",
+        "x": -34.03186274321587,
+        "y": 278.1846086306241
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "GND",
+        "x": 160.02787955644075,
+        "y": 309.64037194838477
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [
+        {
+          "x": -24.476750980883253,
+          "y": 301.42233035438085
+        },
+        {
+          "x": 135.01968978003575,
+          "y": 301.42233035438085
+        },
+        {
+          "x": 135.01968978003575,
+          "y": 406.187210444508
+        },
+        {
+          "x": 288.0278795564408,
+          "y": 406.187210444508
+        }
+      ],
+      "id": "wire-1783865470028",
+      "start": {
+        "componentId": "ssd1306_i2c_1783864743241_jgvrtlcy1",
+        "pinName": "VCC",
+        "x": -24.031862743215868,
+        "y": 278.1846086306241
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "3V3",
+        "x": 288.0278795564408,
+        "y": 322.64037194838477
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [
+        {
+          "x": -14.031862743215868,
+          "y": 252.6324496159922
+        },
+        {
+          "x": 261.2377229658852,
+          "y": 252.6324496159922
+        },
+        {
+          "x": 261.2377229658852,
+          "y": 162.76502560718174
+        },
+        {
+          "x": 288.0278795564408,
+          "y": 162.76502560718174
+        }
+      ],
+      "id": "wire-1783865486068",
+      "start": {
+        "componentId": "ssd1306_i2c_1783864743241_jgvrtlcy1",
+        "pinName": "SCL",
+        "x": -14.031862743215868,
+        "y": 278.1846086306241
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "22",
+        "x": 288.0278795564408,
+        "y": 157.64037194838477
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [
+        {
+          "x": 276.3639230465761,
+          "y": 194.79697871923298
+        }
+      ],
+      "id": "wire-1783865497960",
+      "start": {
+        "componentId": "ssd1306_i2c_1783864743241_jgvrtlcy1",
+        "pinName": "SDA",
+        "x": -4.031862743215868,
+        "y": 278.1846086306241
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "21",
+        "x": 288.0278795564408,
+        "y": 195.64037194838477
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [
+        {
+          "x": 121.84613370795297,
+          "y": 183.77068904752556
+        }
+      ],
+      "id": "wire-1783865517360",
+      "start": {
+        "componentId": "photoresistor_sensor_1783864780729_2mdy6yone",
+        "pinName": "AO",
+        "x": -2.197031402328122,
+        "y": 149.71116906248324
+      },
+      "end": {
+        "componentId": "esp32",
+        "pinName": "34",
+        "x": 160.02787955644075,
+        "y": 182.64037194838477
+      },
+      "color": "#22c55e"
+    }
+  ],
+  "activeBoardId": "esp32",
+  "ignoreStock": false
+}
