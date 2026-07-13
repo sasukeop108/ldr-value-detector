@@ -2,7 +2,7 @@
 
 
 
-
+![Ldr value detector](screenshot.png)
 
 
 > Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1 hours of work.
@@ -26,7 +26,8 @@ Power the esp32 devkit. You'll see the initializing message for first 2 seconds.
 
 ## Demo
 
-- **Try it:** [https://taniwankenobi.github.io/breadboard-plays/p/127/](https://taniwankenobi.github.io/breadboard-plays/p/127/)
+- **Simulate it live:** [https://breadboard.hackclub.com/share/127](https://breadboard.hackclub.com/share/127), runs the firmware in the Breadboard simulator
+- **View the design:** [https://taniwankenobi.github.io/breadboard-plays/p/127/](https://taniwankenobi.github.io/breadboard-plays/p/127/)
 
 
 ## Schematic
